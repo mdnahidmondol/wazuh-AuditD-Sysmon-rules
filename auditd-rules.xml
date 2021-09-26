@@ -1,0 +1,15 @@
+<group name="RootCommands">
+  <rule id="100002" level="11">
+    <if_sid>80792</if_sid>
+    <field name="audit.euid">0</field>
+    <description>Audit: Root Command execution: $(audit.exe) with loginuid user $(audit.auid)</description>
+  </rule>
+  
+  <rule id="100003" level="11">
+    <if_sid>100002</if_sid>
+    <field name="audit.execve.a1">/etc/passwd</field>
+    <description>Audit: Root Command execution: /etc/passwd file. Action requried asap</description>
+  </rule>
+
+</group>
+
